@@ -54,15 +54,15 @@ spec:
           volumeMounts:
             - mountPath: /opt/alist/data
               name: data
-            - mountPath: /home_storage
-              name: home-storage
+            - mountPath: /home
+              name: home
 
       volumes:
         - name: data
           hostPath:
             type: DirectoryOrCreate
             path: '{{ .Values.userspace.appData }}/alist'
-        - name: home-storage
+        - name: home
           hostPath:
             path: "{{ .Values.userspace.userData }}"
             type: DirectoryOrCreate
